@@ -1,0 +1,36 @@
+<div>
+  <%= form_with model: @category, method:'post', class:'form',url: categories_path do |form| %>
+  <div class="navbar">
+    <a class="arrow-back" data-method="get" href="<%=categories_index_path%>">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+       <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+    </a>
+    <h2>Add Category</h2>
+    <div class="actions">
+      <%= form.submit "Create" %>
+    </div>
+  </div>
+    <div class="field">
+      <div class="select-pic">
+        <img src=<%=image_path("coin.png")%>/>
+        <label id="label-for-image" for="category_image" 
+            class="select-pic-link">
+          Upload picture 
+        </label>
+        <%= form.file_field :image, class:"hide-form-img" %>
+      </div>
+      <%= form.text_field :name, autofocus: true, placeholder: "Name" %>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  document.getElementById('category_image').addEventListener('change', (e) => {
+    if(e.target.files.length == 1){
+      fileName = e.target.files[0].name;
+      document.getElementById('label-for-image').textContent = fileName;
+    }
+    console.log(e.target.files)
+  });
+</script>
