@@ -46,6 +46,10 @@ gem "tzinfo-data"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+gem 'image_processing', '~> 1.2'
+# gem 'ruby-vips'
+
+gem 'google-cloud-storage', '~> 1.11', require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
