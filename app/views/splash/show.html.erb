@@ -1,2 +1,9 @@
-<h1>Splash#show</h1>
-<p>Find me in app/views/splash/show.html.erb</p>
+<div class="splash-container">
+  <h1 class='app-name'>Expenses Tracker</h1>
+  <div class="sessions-container">
+    <%=button_to 'LOG IN', user_session_path, method: :get, autofocus: true,
+      class:'login-btn'%>
+    <%=button_to 'SIGN UP', new_user_registration_path, method: :get,
+    class:'sign-up-btn'%>
+  </div>
+</div>
