@@ -50,4 +50,4 @@ Give a ⭐️ if you like this project!
 
 This project is [MIT](./MIT.md) licensed.
 
-- To see the project live please click [here](https://bloc-beaver-45449.herokuapp.com/)
+- To see the project live please click [here](https://bearded-minister-78945.herokuapp.com/)
