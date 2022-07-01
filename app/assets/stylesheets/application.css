@@ -1,15 +1,294 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+@font-face {
+  font-family: 'novalight';
+  src: url("fonts/nova-light.otf");
+}
+
+@font-face {
+  font-family: 'novabold';
+  src: url("fonts/nova-bold.otf");
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url("fonts/Pacifico-Regular.ttf");
+}
+
+/************************************************
+  Reset code
+*************************************************/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+label,
+li {
+  margin: 0;
+  padding: 0;
+  font-family: 'novalight', Arial, Helvetica, sans-serif;
+  color: inherit;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+a {
+  text-decoration: none;
+}
+
+.field input,
+textarea {
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+}
+
+.field {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.field a {
+  text-decoration: none;
+  width: fit-content;
+  margin-inline: auto;
+  display: block;
+}
+
+.field img {
+  width: 90px;
+  height: auto;
+}
+
+.actions input {
+  background-color: inherit;
+  border: none;
+  color: #fff;
+  margin-inline: 3px;
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+.select-image {
+  background-color: inherit;
+  border: none;
+}
+
+.arrow-back {
+  text-decoration: none;
+  width: 24px;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.hamburger-button {
+  background-color: inherit;
+  color: inherit;
+  width: 30px;
+  border: none;
+  margin-inline: 5px;
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 240px;
+}
+
+.app-name {
+  font-family: 'Pacifico', cursive;
+  font-size: 64px;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 95px;
+  padding-top: 50px;
+}
+
+.sessions-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px 10px 20px;
+  gap: 5px;
+}
+
+.login-btn {
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  background-color: #3778c2;
+  padding: 10px;
+  width: 100%;
+  height: 65px;
+}
+
+.sign-up-btn {
+  border: none;
+  color: #989da3;
+  font-size: 18px;
+  background-color: inherit;
+  padding: 10px;
+  width: 100%;
+  height: 65px;
+}
+
+.navbar {
+  display: flex;
+  background-color: #3778c2;
+  color: #fff;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.select-pic {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.select-pic-link {
+  color: #878a8f;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.hide-form-img {
+  opacity: 0;
+  z-index: -1;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search {
+  height: 20px;
+  margin-left: 15px;
+}
+
+.category-details {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.category-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex: 1;
+}
+
+.category-img {
+  border-radius: 20%;
+  width: 100px;
+}
+
+.category-total {
+  color: #878a8f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.add-btn {
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  background-color: #5fb523;
+  padding: 10px;
+  width: 100%;
+  height: 65px;
+}
+
+.transaction-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 10px;
+}
+
+.transaction-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  height: 70px;
+  width: 100%;
+}
+
+.transaction-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transaction-total {
+  color: #878a8f;
+  font-weight: bold;
+}
+
+.transaction-date {
+  color: #000;
+}
+
+.new-transaction-container {
+  margin: 10px;
+}
+
+.menu-img {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.user-name-menu {
+  color: #fff;
+  margin: 20px;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  body {
+    width: 80%;
+    margin-inline: auto;
+  }
+}
