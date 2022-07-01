@@ -31,12 +31,12 @@ RSpec.describe 'Transactions pages', type: :feature do
   end
 
   it 'Navigate to add transaction page' do
-    click_button('Add Transaction')
-    expect(current_path).to be == entity_new_path(category_id: @category.id)
+    click_link('Add Transaction')
+    expect(current_path).to be == entity_new_path
   end
 
   it 'Save a new Transaction' do
-    click_button('Add Transaction')
+    click_link('Add Transaction')
     fill_in 'entity_name', with: 'test transaction 2'
     fill_in 'entity_amount', with: '1'
     click_button('Create')

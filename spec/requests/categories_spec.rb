@@ -4,14 +4,14 @@ RSpec.describe "Categories", type: :request do
   describe "GET /index" do
     it "returns http success" do
       get "/categories/index"
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(302)
     end
   end
 
   describe "GET /new" do
     it "returns http success" do
       get "/categories/new"
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(302)
     end
   end
 
