@@ -45,6 +45,7 @@ Give a ⭐️ if you like this project!
 
 - Microverse: [microverse community](https://github.com/microverseinc)
 - All the friends that helped me along the way.
+- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
 ## 📝 License
 
