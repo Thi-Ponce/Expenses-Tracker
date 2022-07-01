@@ -2,7 +2,7 @@
 
 # Blog app📝
 
-- This is a simple app made using Ruby on Rails where you can keep track of your expenses.
+- This is a simple app made using Ruby on Rails where you can keep track of your expenses. You can see a video demo [here](https://www.loom.com/share/22519db3d9b54aa3a191e9e224ab2f39)
 
 ## Built With
 
@@ -49,3 +49,5 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+
+- To see the project live please click [here](https://bloc-beaver-45449.herokuapp.com/)
