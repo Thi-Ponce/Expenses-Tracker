@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :categories
   has_many :entities, foreign_key: :user_id
 
-  validates :name, presence: { message: "Enter a valid name" }
+  validates :name, presence: { message: 'Enter a valid name' }
 end

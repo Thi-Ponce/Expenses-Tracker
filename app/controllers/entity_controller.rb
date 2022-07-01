@@ -4,8 +4,7 @@ class EntityController < ApplicationController
     @entities = Entity.where(category_id: params[:category_id], user: current_user).order('created_at ASC')
   end
 
-  def show
-  end
+  def show; end
 
   def new
     puts 'Processing new'
