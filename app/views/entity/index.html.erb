@@ -1,0 +1,36 @@
+<div class="navbar">
+  <a class="arrow-back" data-method="get" href="<%=categories_index_path%>">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+    </svg>
+  </a>
+  <h2>Transactions</h2>
+  <div class="actions">
+    <svg xmlns="http://www.w3.org/2000/svg" class="search" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    </svg>
+  </div>
+</div>
+ <div class="category-details">
+      <% if @category.image.attached?%>
+        <img src=<%=url_for(@category.image)%> class="category-img"/>
+      <%else%>
+        <img src=<%=image_path("coin.png")%> class="category-img"/>
+       <%end%>
+      <div class="category-info">
+        <p class="category-total"> <%=@category.name%> </p>
+        <p class="category-total" >  <%=number_to_currency @category.entities.where(user: current_user).sum(:amount)%> </p>
+      </div>
+    </div>
+<div class="transaction-list-container">  
+    <%@category.entities.order(created_at: :desc).each do |entity|%>
+        <div class="transaction-container">
+          <div class="transaction-info">
+            <p class="transaction-total"><%=entity.name%></p>
+            <p class="transaction-total"><%=number_to_currency entity.amount%></p>
+          </div>
+          <p class="transaction-date"><%=@category.created_at.strftime("%Y/%m/%d")%></p>
+        </div>
+    <%end%>
+</div>
+    <%=link_to(new_entity_path(category_id: @category.id)) { button_tag("Add Transaction", class: 'add-btn') } %>
